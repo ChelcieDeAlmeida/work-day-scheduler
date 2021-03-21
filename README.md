@@ -16,7 +16,7 @@ The work day scheduler - as the name suggests - allows the user to plan their wo
 ![Screen Shot 2021-03-21 at 2 15 22 PM](https://user-images.githubusercontent.com/35352010/111921581-8b108880-8a52-11eb-929f-34373aebd6e6.png)
 
 ## **_Link URL to deployed app on GitHub_**
-https://chelciedealmeida.github.io/web-api-ch4/https://chelciedealmeida.github.io/work-day-scheduler/
+https://chelciedealmeida.github.io/work-day-scheduler/
 
 ## **_Link URL to GitHub Repository_**
 https://github.com/ChelcieDeAlmeida/work-day-scheduler

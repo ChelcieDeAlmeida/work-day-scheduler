@@ -19,11 +19,15 @@ $("<textarea>").on("click", function(event) {
     .trim();
   });
 
-
 // Clicking the save button to store the text in the time blocks in localStorage //
 // and once the page is refreshed, the text will still be present //
 
-// ENTER CODE HERE //
+$(".saveBtn").on("click", function() {
+  var textData = $(this).siblings("textarea").val()
+  var timeClock = $(this).parent().attr('id')
+  console.log('textData',textData,timeClock);
+  localStorage.setItem(timeClock,textData);
+});
 
 
 
@@ -31,7 +35,7 @@ $("<textarea>").on("click", function(event) {
 // Color coding for time block based on whether the block is in the past //
 // present, or future // 
 
-// NOTE: Logic only works during a 9-5 after which it d
+// NOTE: Need to make sure this works during regular hours
 
 let currentHour = parseInt(moment().format('H')); 
 const rows = document.getElementsByClassName("row");
@@ -42,36 +46,18 @@ Array.from(rows).forEach(row => {
     rowHour;
   if (rowIdString) {
     rowHour = parseInt(rowIdString);
-    console.log(rowHour);
   }
   if (rowHour) {
     // Compares row id to current hour and sets color accordingly
-    if (currentHour === rowHour) {
-      $(".description").addClass("present")
-    } 
-    if (currentHour > rowHour) {
+    if (currentHour < rowHour) {
       $(".description").addClass("past")
     } 
-    if (currentHour < rowHour) {
+    else if (currentHour === rowHour) {
+      $(".description").addClass("present")
+    } 
+    else  {
       $(".description").addClass("future")
     } 
 
   }
 });
-
-
-
-
-
-
-// var timeColor = function() {
-//   var actualTime = $("<textarea>").text(moment().format('hA'));
-//   if (actualTime === timeBlocks) {
-//     $("<textarea>").addClass("present")
-//   }
-// }
-
-
-
-
-// ENTER CODE HERE //

@@ -30,7 +30,9 @@ $(".saveBtn").on("click", function() {
 });
 
 
-
+for (let i = 9; i <= 17; i++) {
+  $('#'+i).children('textarea').val(localStorage.getItem(i))
+}
 
 // Color coding for time block based on whether the block is in the past //
 // present, or future // 
@@ -40,24 +42,26 @@ $(".saveBtn").on("click", function() {
 let currentHour = parseInt(moment().format('H')); 
 const rows = document.getElementsByClassName("row");
 
-Array.from(rows).forEach(row => {
-  let
-    rowIdString = row.id,
-    rowHour;
-  if (rowIdString) {
-    rowHour = parseInt(rowIdString);
-  }
-  if (rowHour) {
-    // Compares row id to current hour and sets color accordingly
-    if (currentHour < rowHour) {
-      $(".description").addClass("past")
-    } 
-    else if (currentHour === rowHour) {
-      $(".description").addClass("present")
-    } 
-    else  {
-      $(".description").addClass("future")
-    } 
 
-  }
-});
+
+// Array.from(rows).forEach(row => {
+//   let
+//     rowIdString = row.id,
+//     rowHour;
+//   if (rowIdString) {
+//     rowHour = parseInt(rowIdString);
+//   }
+//   if (rowHour) {
+//     // Compares row id to current hour and sets color accordingly
+//     if (currentHour < rowHour) {
+//       $(".description").addClass("past")
+//     } 
+//     else if (currentHour === rowHour) {
+//       $(".description").addClass("present")
+//     } 
+//     else  {
+//       $(".description").addClass("future")
+//     } 
+
+//   }
+// });
